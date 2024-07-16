@@ -10,8 +10,8 @@ const EventInfo = [
     title: "Beyoncé : Renaissance World Tour",
     location: "MetLife Stadium",
     images: {
-      pfp: "../public/entertainment-pfp.png",
-      bg: "../public/entertainment-bg.png",
+      pfp: "/entertainment-pfp.png",
+      bg: "/entertainment-bg.png",
     },
   },
   {
@@ -20,8 +20,8 @@ const EventInfo = [
     title: "Blue Jays @ NY Yankees",
     location: "Yankee Stadium",
     images: {
-      pfp: "../public/recreation-pfp.png",
-      bg: "../public/recreation-bg.png",
+      pfp: "/recreation-pfp.png",
+      bg: "/recreation-bg.png",
     },
   },
   {
@@ -30,8 +30,8 @@ const EventInfo = [
     title: "Spiderman: Into The Spiderverse",
     location: "AMC 34th Street 14",
     images: {
-      pfp: "../public/arts-pfp.png",
-      bg: "../public/arts-bg.png",
+      pfp: "/arts-pfp.png",
+      bg: "/arts-bg.png",
     },
   },
 ];
@@ -39,9 +39,13 @@ const EventInfo = [
 export default function Home() {
   return (
     <main>
-      {EventInfo.map((event, i) => (
-        <Event key={i} {...event} />
-      ))}
+      <div className="absolute top-0 left-0 w-full h-full bg-[#111927] flex items-center justify-center">
+        <div className="flex flex-col gap-[26px] items-stretch w-[780px]">
+          {EventInfo.map((event, i) => (
+            <Event key={i} isActive={true} {...event} />
+          ))}
+        </div>
+      </div>
     </main>
   );
 }
