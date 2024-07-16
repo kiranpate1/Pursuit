@@ -46,9 +46,9 @@ export default function RootLayout({
       <body
         className={`
           ${fkscreamer.variable} 
-          ${macan.className} 
-          ${suisse.className} 
-          overflow-x-hidden
+          ${macan.variable} 
+          ${suisse.variable} 
+          overflow-x-hidden antialiased
         `}
       >
         {children}

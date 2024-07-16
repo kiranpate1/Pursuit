@@ -1,5 +1,6 @@
 "use client";
 
+import React, { MutableRefObject, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Event from "../components/Event";
 
@@ -37,12 +38,17 @@ const EventInfo = [
 ];
 
 export default function Home() {
+  function handleEventClick(i: number) {
+    console.log(i);
+  }
   return (
     <main>
       <div className="absolute top-0 left-0 w-full h-full bg-[#111927] flex items-center justify-center">
         <div className="flex flex-col gap-[26px] items-stretch w-[780px]">
           {EventInfo.map((event, i) => (
-            <Event key={i} isActive={true} {...event} />
+            <div key={i} onClick={() => handleEventClick(i)}>
+              <Event {...event} />
+            </div>
           ))}
         </div>
       </div>
